@@ -11,7 +11,7 @@ SNLI='https://nlp.stanford.edu/projects/snli/snli_1.0.zip'
 MultiNLI='https://www.nyu.edu/projects/bowman/multinli/multinli_0.9.zip'
 
 
-ZIPTOOL="unzip"
+ZIPTOOL="python unzip.py"
 
 #if [ "$OSTYPE" == "darwin"* ]; then
 #    # unzip can't handle large files on some MacOS versions
@@ -20,10 +20,10 @@ ZIPTOOL="unzip"
 
 
 ### download SNLI
-mkdir SNLI
-curl -Lo SNLI/snli_1.0.zip $SNLI
-$ZIPTOOL SNLI/snli_1.0.zip -d SNLI
-rm SNLI/snli_1.0.zip
+# mkdir SNLI
+# curl -Lo SNLI/snli_1.0.zip $SNLI
+# $ZIPTOOL SNLI/snli_1.0.zip SNLI
+# rm SNLI/snli_1.0.zip
 rm -r SNLI/__MACOSX
 
 for split in train dev test
@@ -40,10 +40,10 @@ rm -r SNLI/snli_1.0
 
 # MultiNLI
 # Test set not available yet : we define dev set as the "matched" set and the test set as the "mismatched"
-mkdir MultiNLI
-curl -Lo MultiNLI/multinli_0.9.zip $MultiNLI
-$ZIPTOOL MultiNLI/multinli_0.9.zip -d MultiNLI
-rm MultiNLI/multinli_0.9.zip
+# mkdir MultiNLI
+# curl -Lo MultiNLI/multinli_0.9.zip $MultiNLI
+# $ZIPTOOL MultiNLI/multinli_0.9.zip MultiNLI
+# rm MultiNLI/multinli_0.9.zip
 rm -r MultiNLI/__MACOSX
 
 
@@ -62,4 +62,3 @@ do
     cut -f3 $fpath.tok | $preprocess_exec > MultiNLI/s2.$split
     rm $fpath $fpath.tok 
 done
-
