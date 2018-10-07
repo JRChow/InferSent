@@ -61,5 +61,4 @@ if __name__ == "__main__":
     most_freq_word_count = 100000
     model = InferSentModel(version, use_gpu, most_freq_word_count)
     model.load_sentences(SAMPLE_SENTENCES_PATH)
-
-
+    model.do_embedding()
