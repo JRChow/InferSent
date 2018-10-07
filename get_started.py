@@ -8,9 +8,9 @@ from models import InferSent
 __author__ = "ZHOU, JINGRAN"
 
 RAW_MODEL_PATH = '/home/fyp1/language_style_transfer/code/is/InferSent' \
-                 '/encoder/infersent%s.pkl '
+                 '/encoder/infersent%s.pkl'
 SAMPLE_SENTENCES_PATH = '/home/fyp1/language_style_transfer/code/is' \
-                        '/InferSent/encoder/samples.txt '
+                        '/InferSent/encoder/samples.txt'
 YELP_PATH = '/home/fyp1/language_style_transfer/data/dataset/ye/yelp.all'
 
 
