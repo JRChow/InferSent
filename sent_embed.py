@@ -1,4 +1,4 @@
-"""get_started.py: Sentence embedding using InferSent."""
+"""sent_embed.py: Sentence embedding using InferSent."""
 
 # import nltk
 # nltk.download('punkt')
