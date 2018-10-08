@@ -4,6 +4,7 @@
 # nltk.download('punkt')
 import torch
 from models import InferSent
+from pprint import pprint as pp
 
 __author__ = "ZHOU, JINGRAN"
 
@@ -58,7 +59,9 @@ class InferSentModel:
 if __name__ == "__main__":
     version = 1  # The version trained with GloVe
     use_gpu = True  # To speed up
-    most_freq_word_count = 100000
+    # Load embeddings of top 100000 most frequent words
+    most_freq_word_count = 100000  
     model = InferSentModel(version, use_gpu, most_freq_word_count)
     model.load_sentences(SAMPLE_SENTENCES_PATH)
     model.do_embedding()
+    pp(model.embeddings)
